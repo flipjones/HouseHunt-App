@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.flipjones.househunt3.HouseActivity">
+
+    <TextView
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addressview"
+        android:text="Address Goes Here"
+        android:textSize="25sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_below="@id/addressview"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/barView"
+        android:background="@android:color/darker_gray"/>
+
+    <TextView
+        android:layout_below="@id/barView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/priceview"
+        android:text="Price:"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/editPrice"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/priceview"
+        android:text="price"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/barView"
+        android:textSize="18sp"
+        android:inputType="number"/>
+
+    <RadioGroup
+        android:id="@+id/availableview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="16dp"
+        android:layout_below="@id/priceview">
+        <RadioButton android:id="@+id/radio_available"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Available" />
+        <RadioButton android:id="@+id/radio_unavailable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Not Available"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_below="@id/availableview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/optionview"
+        android:text="No special amenities"
+        android:textSize="18sp" />
+    <Spinner
+        android:layout_below="@id/optionview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/nspinner"
+        android:text="Neighborhood Goes Here"
+        android:textSize="18sp" />
+    <Button
+        android:layout_below="@id/nspinner"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:onClick="updateHouse"/>
+
+    <Button
+        android:layout_above="@+id/mapbutt"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete this House (permanent!)"
+        android:onClick="deleteHouse" />
+
+    <Button
+        android:id="@+id/mapbutt"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="See it in Maps!"
+        android:onClick="goToMap"/>
+
+</RelativeLayout>

@@ -1,0 +1,107 @@
+<!--
+Tutorial followed from the following site:
+https://www.numetriclabz.com/android-post-and-get-request-using-httpurlconnection/
+Remainder of code was learned through Udacity's Developing Android Apps course, course ud853.
+Small amounts of code from Android Developer resource were modified and used.
+-->
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="com.flipjones.househunt2.MainActivity">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/showUser"
+            android:paddingBottom="18dp"
+            android:text="Househunter account for Philip"
+            android:textSize="16dp"/>
+
+        <EditText
+            android:id="@+id/address_view"
+            android:layout_below="@+id/showUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:hint="Address"/>
+
+        <EditText
+            android:id="@+id/price_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/address_view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:hint="Price"
+            android:inputType="number"/>
+
+        <RadioGroup
+            android:id="@+id/available_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+            <RadioButton android:id="@+id/radio_available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Available"
+                android:onClick="onRadioButtonClicked"/>
+            <RadioButton android:id="@+id/radio_unavailable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Not Available"
+                android:onClick="onRadioButtonClicked"/>
+        </RadioGroup>
+
+        <Spinner
+            android:id="@+id/nspinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/available_view"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:hint="Neighborhood ID"
+            android:inputType="number"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add House"
+            android:id="@+id/sendPost"
+            android:layout_below="@+id/nspinner"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="sendPostRequest"/>
+
+
+        <TextView
+            android:paddingTop="30dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Response..."
+            android:id="@+id/showOutput"
+            android:layout_below="@+id/sendPost"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+</ScrollView>
